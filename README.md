@@ -30,10 +30,7 @@ docker compose up -d
 ```
 
 In the following instructions we assume you chose the username "elastic"
-## How to work with the index
-
-### Create a new index
-We detail how to create the index for the Wikidata entities and the one for the GND entities.
+## How to create the indices
 ### Populate new index with Wikidata
 #### With our prepared data
 Create and populate the index for the person entities in Wikidata: <pre><code>python utils/wikidata_load_to_elasticsearch.py</code></pre>
@@ -43,11 +40,11 @@ Or if you download the newest wikidata dump you need to filter by human instance
 <pre><code>cat latest-all.json.gz | pigz -d -k | ./utils/prep_wikidata/wikibase_dump_filter --claim ./utils/prep_wikidata/claims > humans.json</code></pre>
 Then prepare the data as is appropriate for your usecase. For CHNOBLi we only keep certain fields and resolve the Q-Codes into their value labels (see `utils/prep_wikidata/wikidata_prep_for_elasticsearch.ipynb`).
 
-**If you are creating this index for the CHNOBLi pipeline, remember to change "plessur.ethz.ch:9200" with "localhost:9200" in the "utility/.env" file for the CHNOBLi code.**
+**If you are creating this index for the CHNOBLi pipeline, remember to replace "plessur.ethz.ch:9200" with "localhost:9200" in the "utility/.env" file for the CHNOBLi code.**
 ### Populate new index with GND
 Create and populate the index for the person entities in the GND-ID: <pre><code>python utils/gnd_load_to_elasticsearch.py</code></pre>
 
-**If you are creating this index for the CHNOBLi pipeline, remember to change "plessur.ethz.ch:9200" with "localhost:9200" in the "utility/.env" file for the CHNOBLi code.**
+**If you are creating this index for the CHNOBLi pipeline, remember to replace "plessur.ethz.ch:9200" with "localhost:9200" in the "utility/.env" file for the CHNOBLi code.**
 
 ### Working with an existing index
 
