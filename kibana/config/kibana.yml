@@ -1,0 +1,25 @@
+## X-Pack security credentials
+#elasticsearch.username: ${ELASTIC_USERNAME}
+#elasticsearch.password: ${ELASTIC_PASSWORD}
+## Default Kibana configuration from Kibana base image.
+## https://github.com/elastic/kibana/blob/master/src/dev/build/tasks/os_packages/docker_generator/templates/kibana_yml.template.js
+#
+server.name: kibana
+server.host: "0.0.0.0"
+  #server.host: "129.132.8.142"
+
+# Elasticsearch Connection
+elasticsearch.hosts: [ "${ELASTICSEARCH_HOST_PORT}" ]
+
+# SSL settings
+server.ssl.enabled: true
+server.ssl.certificate: /certs/kibana.crt
+server.ssl.key: /certs/kibana.key
+server.ssl.certificateAuthorities: [ "/certs/ca.crt" ]
+xpack.security.encryptionKey: C1tHnfrlfxSPxPlQ8BlgPB5qMNRtg5V5
+xpack.encryptedSavedObjects.encryptionKey: D12GTfrlfxSPxPlGRBlgPB5qM5GOPDV5
+xpack.reporting.encryptionKey: RSCueeHKzrqzOVTJhkjt17EMnzM96LlN
+
+## X-Pack security credentials
+elasticsearch.serviceAccountToken: "${KIBANA_SERVICE_ACCOUNT_TOKEN}"
+elasticsearch.ssl.certificateAuthorities: [ "/certs/ca.crt" ]

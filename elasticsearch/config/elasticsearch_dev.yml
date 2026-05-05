@@ -1,0 +1,37 @@
+# ======================== Elasticsearch Configuration =========================
+#
+# NOTE: Elasticsearch comes with reasonable defaults for most settings.
+#       Before you set out to tweak and tune the configuration, make sure you
+#       understand what are you trying to accomplish and the consequences.
+#
+# The primary way of configuring a node is via this file. This template lists
+# the most important settings you may want to configure for a production cluster.
+#
+# Please consult the documentation for further information on configuration options:
+# https://www.elastic.co/guide/en/elasticsearch/reference/index.html
+#
+# ---------------------------------- Cluster -----------------------------------
+#
+# Use a descriptive name for your cluster:
+#
+#cluster.name: my-application
+#
+## Default Elasticsearch configuration from Elasticsearch base image.
+## https://github.com/elastic/elasticsearch/blob/master/distribution/docker/src/docker/config/elasticsearch.yml
+#
+cluster.name: ${ELASTIC_CLUSTER_NAME}
+node.name:    ${ELASTIC_NODE_NAME}
+network.host: 0.0.0.0
+transport.host: 0.0.0.0
+
+## Cluster Settings
+discovery.seed_hosts: ${ELASTIC_DISCOVERY_SEEDS}
+cluster.initial_master_nodes: ${ELASTIC_INIT_MASTER_NODE}
+
+## License
+xpack.license.self_generated.type: basic
+
+# Security
+xpack.security.enabled: false
+
+

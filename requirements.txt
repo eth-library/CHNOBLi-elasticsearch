@@ -1,0 +1,4 @@
+dotenv
+elasticsearch==8.18.1
+requests
+orjson
