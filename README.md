@@ -14,12 +14,11 @@ in your /etc/sysctl.conf and run
 
 for Windows it's
 
-`wsl -d docker-desktop`
-
-`sysctl -w vm.max_map_count=262144`
-
-`exit`
-
+```
+wsl -d docker-desktop
+sysctl -w vm.max_map_count=262144
+exit
+```
 
 ## How to deploy
 
