@@ -41,13 +41,11 @@ if [ -f "$OUTPUT_KEYSTORE" ]; then
     rm -f $OUTPUT_KEYSTORE
 fi
 
-echo "HELLO"
 echo "Saving new elasticsearch.keystore"
 mkdir -p "$(dirname $OUTPUT_KEYSTORE)"
 mv $GENERATED_KEYSTORE $OUTPUT_KEYSTORE
 chmod 0644 $OUTPUT_KEYSTORE
 
-echo "HELLO2"
 # Replace current Service Tokens File
 if [ -f "$OUTPUT_SERVICE_TOKENS" ]; then
     echo "Remove old service_tokens file"
