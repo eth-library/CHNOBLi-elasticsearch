@@ -22,7 +22,7 @@ es = Elasticsearch(hosts=base_url, basic_auth=(ELASTIC_USERNAME, ELASTIC_PASSWOR
 
 # load mappings file
 with open("utils/wikidata_mappings.json", "r", encoding="utf-8") as f:
-    mappings = json.load(f.read())
+    mappings = json.load(f)
 
 # create ES index
 r = requests.put(
