@@ -19,7 +19,19 @@ wsl -d docker-desktop
 sysctl -w vm.max_map_count=262144
 exit
 ```
-
+## Set up virtual environment
+for Linux:
+```
+python3.12 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+for Windows Command Prompt:
+```
+py -3.12 -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+```
 ## How to deploy
 
 Clone the repository, set the username and password in the `.env_template` freely and rename it to `.env`. Then run the following commands
