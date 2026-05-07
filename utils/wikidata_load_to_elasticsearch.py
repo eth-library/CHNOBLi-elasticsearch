@@ -47,7 +47,7 @@ def generate_actions(file_path, index_name):
  
 
 if not os.path.isfile("wikidata_people.jsonl"):
-    r = requests.get("https://polybox.ethz.ch/index.php/s/tX5CYKa4ZcHRmLJ/download")
+    r = requests.get("https://www.research-collection.ethz.ch/bitstreams/b00f80c2-f520-448f-8716-6511f0cb5580/download")
     r_z = zipfile.ZipFile(BytesIO(r.content))
     r_z.extract("wikidata_people.jsonl")
 
