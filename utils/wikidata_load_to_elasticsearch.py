@@ -46,15 +46,15 @@ def generate_actions(file_path, index_name):
             yield {"_index": index_name, "_source": doc}
  
 
-if not os.path.isfile("wikidata_people.jsonl"):
+if not os.path.isfile("wikidata_people_en.jsonl"):
     r = requests.get("https://www.research-collection.ethz.ch/bitstreams/b00f80c2-f520-448f-8716-6511f0cb5580/download")
     r_z = zipfile.ZipFile(BytesIO(r.content))
-    r_z.extract("wikidata_people.jsonl")
+    r_z.extract("wikidata_people_en.jsonl")
 
 # Stream documents with controlled memory usage
 for ok, result in streaming_bulk(
     es,
-    generate_actions("wikidata_people.jsonl", "wikidata"),
+    generate_actions("wikidata_people_en.jsonl", "wikidata"),
     chunk_size=500,  # Number of docs per batch
     max_chunk_bytes=104857600,  # Max 100MB per batch
     raise_on_error=False,
