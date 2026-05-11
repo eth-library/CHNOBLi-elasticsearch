@@ -1,6 +1,3 @@
-# Exit on Error
-set -e
-
 OUTPUT_DIR=/secrets/certs
 ZIP_CA_FILE=$OUTPUT_DIR/ca.zip
 ZIP_FILE=$OUTPUT_DIR/certs.zip
