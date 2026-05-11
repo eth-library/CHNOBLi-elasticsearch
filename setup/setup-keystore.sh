@@ -1,6 +1,3 @@
-# Exit on Error
-set -e
-
 GENERATED_KEYSTORE=/usr/share/elasticsearch/config/elasticsearch.keystore
 OUTPUT_KEYSTORE=/secrets/keystore/elasticsearch.keystore
 
