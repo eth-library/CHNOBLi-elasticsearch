@@ -114,13 +114,14 @@ curl --cacert ${CACERT} -H 'Content-Type: application/json' -su ${USER} -vv -XGE
 </code></pre>
 
 ## FAQ
+### Max retries exceeded with ...
+It is taking longer than expected for the data to be published in the Research Collection, replace the URL `https://www.research-collection.ethz.ch/bitstreams/b00f80c2-f520-448f-8716-6511f0cb5580/download` in `utils/wikidata_load_to_elasticsearch.py` by `https://polybox.ethz.ch/index.php/s/tX5CYKa4ZcHRmLJ/download` and
+`https://www.research-collection.ethz.ch/bitstreams/1d08864b-f239-413c-90ad-d273d1b3ca6d/download` in `utils/gnd_load_to_elasticsearch.py` by `https://polybox.ethz.ch/index.php/s/3SsnHMCeRfaSaKx/download`
 ### Windows
 #### error during connect: This error may indicate that the docker daemon is not running
 Start up Docker Desktop manually.
 #### $'\r': command not found
 This is a certain character (end of line sequence) that only Windows OS uses and which it adds automatically if you open a file in Windows. Open the affected file (likely `/setup/setup-certs.sh` and `/setup/setup-keystore.sh`) in VSCode, press F1 and search for `Change End of Line Sequence`, then select `LF`.
-#### invalid optionsh: line 2: set: -
-Comment out line 2 in `/setup/setup-keystore.sh`.
 #### ERROR: will not overwrite keystore at [/usr/share/elasticsearch/config/elasticsearch.keystore], because this incurs changing the file owner
 Something went wrong with the setup, delete the repo and clone it again.
 #### java.nio.file.AccessDeniedException: /usr/share/elasticsearch/config/service_tokens/service_tokens
