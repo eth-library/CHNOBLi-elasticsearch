@@ -115,8 +115,7 @@ curl --cacert ${CACERT} -H 'Content-Type: application/json' -su ${USER} -vv -XGE
 
 ## FAQ
 ### Max retries exceeded with ...
-It is taking longer than expected for the data to be published in the Research Collection, replace the URL `https://www.research-collection.ethz.ch/bitstreams/b00f80c2-f520-448f-8716-6511f0cb5580/download` in `utils/wikidata_load_to_elasticsearch.py` by `https://polybox.ethz.ch/index.php/s/tX5CYKa4ZcHRmLJ/download` and
-`https://www.research-collection.ethz.ch/bitstreams/1d08864b-f239-413c-90ad-d273d1b3ca6d/download` in `utils/gnd_load_to_elasticsearch.py` by `https://polybox.ethz.ch/index.php/s/3SsnHMCeRfaSaKx/download`
+It is taking longer than expected for the data to be published in the Research Collection, replace the URL in `utils/wikidata_load_to_elasticsearch.py` by `https://polybox.ethz.ch/index.php/s/tX5CYKa4ZcHRmLJ/download` and the one in `utils/gnd_load_to_elasticsearch.py` by `https://polybox.ethz.ch/index.php/s/3SsnHMCeRfaSaKx/download`
 ### 400 Error
 Try replacing `base_url = "https://localhost:9200"` with `base_url = f"https://{ELASTIC_USERNAME}:{ELASTIC_PASSWORD}@localhost:9200"`. The ElasticSearch library should take care of that for you but that might help.
 ### Windows
