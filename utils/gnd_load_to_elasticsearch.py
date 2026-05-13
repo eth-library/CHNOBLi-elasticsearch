@@ -63,7 +63,7 @@ def generate_actions(file_path, index_name):
 
 if not os.path.isfile("gnd_people.jsonl"):
     r = requests.get(
-        "https://www.research-collection.ethz.ch/bitstreams/1d08864b-f239-413c-90ad-d273d1b3ca6d/download"
+        "https://www.research-collection.ethz.ch/bitstreams/188ca5b3-7234-407e-a712-648b161deaf8/download"
     )
     r.raise_for_status()
     r_z = zipfile.ZipFile(BytesIO(r.content))

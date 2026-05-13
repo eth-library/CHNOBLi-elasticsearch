@@ -63,7 +63,7 @@ def generate_actions(file_path, index_name):
 
 if not os.path.isfile("wikidata_people_en.jsonl"):
     r = requests.get(
-        "https://www.research-collection.ethz.ch/bitstreams/b00f80c2-f520-448f-8716-6511f0cb5580/download"
+        "https://www.research-collection.ethz.ch/bitstreams/32392062-d947-436b-b4d2-7d34f811c0ff/download"
     )
     r.raise_for_status()
     r_z = zipfile.ZipFile(BytesIO(r.content))
