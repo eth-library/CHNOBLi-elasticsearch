@@ -3,6 +3,7 @@ instances:
     dns:
       - elasticsearch
       - localhost
+      - host.docker.internal
       - plessur.ethz.ch
     ip:
       - 127.0.0.1
@@ -11,6 +12,7 @@ instances:
     dns:
       - kibana
       - localhost
+      - host.docker.internal
       - plessur.ethz.ch
     ip:
       - 127.0.0.1
